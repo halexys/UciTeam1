@@ -7,7 +7,11 @@ Paso 1: Obtención y Descompresión del Archivo
 
 En el reto nos proporcionan un archivo llamado reto01.zip. El primer paso fue descomprimir este archivo
 utilizando el siguiente comando:
+
+```bash
 unzip Reto01.zip
+```
+
 Al descomprimir, listamos con ls el contenido de la carpeta y encontramos una serie de ficheros
 nombrados de manera consecutiva.
 
