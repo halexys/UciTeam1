@@ -76,7 +76,7 @@ flag: flag{j4rd1n-Alc4z4r}
 ![Captura de pantalla -2024-05-20 21-55-52](https://github.com/halexys/UciTeam1/assets/72656657/f088ff70-9224-4955-992c-cf477c44067b)
 
 
-junto con la flag otra url la cual agregamos a host : http://don-pedro.dorne.got
+junto con la flag otra url la cual agregamos a hosts : http://don-pedro.dorne.got
 
 ## ![Captura de pantalla -2024-05-20 22-05-16](https://github.com/halexys/UciTeam1/assets/72656657/c9f8e020-79c5-434a-b5bd-ff4458cc681b)
 
