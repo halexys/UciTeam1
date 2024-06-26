@@ -194,7 +194,7 @@ Solo completa el nombre y te dire mi decision en el archivo flag.txt
 doran@jnic2024:~$
 ```
 
-Luego de googlear quien mato an doran martel encontramos q fue Ellaria y probamos reempalzar los asteriscos por Ellaria:
+Luego de googlear quien mato a doran martel encontramos q fue Ellaria y probamos reempalzar los asteriscos por Ellaria:
 
 ```bash
 doran@jnic2024:~$ cat flag.txt 
