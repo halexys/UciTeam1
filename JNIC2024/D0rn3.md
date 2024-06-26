@@ -69,7 +69,7 @@ y abrio otra pagina:
 ![Captura de pantalla -2024-05-20 21-53-32](https://github.com/halexys/UciTeam1/assets/72656657/09259921-848e-4765-ad44-8b8c292e5f59)
 
 
-no demoramos mucho en darnos cuenta q teniamos q establecer la cokie q debolvio el XSS y nos permitio "Acceso" y la primera flag:
+no demoramos mucho en darnos cuenta q teniamos q establecer la cokie q devolvio el XSS y nos permitio "Acceso" y la primera flag:
 
 flag: flag{j4rd1n-Alc4z4r}
 
