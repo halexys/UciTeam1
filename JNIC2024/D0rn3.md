@@ -100,17 +100,20 @@ Era bastante obvio el LFI(loca file inclusion) ya q al principio de cada linea e
 
 una nueva url en el acces.txt y un usuario y contraseña?
 
-![Captura de pantalla -2024-05-20 22-18-16.png](file:///home/hal/.config/joplin-desktop/resources/03493391b5a144bbb7443bd37128c951.png)
+![Captura de pantalla -2024-05-20 22-18-16](https://github.com/halexys/UciTeam1/assets/72656657/426ce299-4407-4717-9019-4c8c481a74e5)
+
 
 al ingresar el usario y la contraseña sale lo siguiente:
 
-![Captura de pantalla -2024-05-20 22-19-33.png](file:///home/hal/.config/joplin-desktop/resources/9a754cc75d534cd680387a81eb81e125.png)
+![Captura de pantalla -2024-05-20 22-19-33](https://github.com/halexys/UciTeam1/assets/72656657/9949bcdc-79f8-4721-9d09-951114beb4ec)
+
 
 ## Paso 6
 
 probamos subir un archivo cualquiera:
 
-![Captura de pantalla -2024-05-20 22-22-06.png](file:///home/hal/.config/joplin-desktop/resources/c968a17f099844248f5e9b17c547f51f.png)
+![Captura de pantalla -2024-05-20 22-22-06](https://github.com/halexys/UciTeam1/assets/72656657/6bf241d5-a8aa-47c0-80db-c0bdc997bdb1)
+
 
 como dice q solo funcionara secret.sh probamos ejecutar un comando simple de bash
 
@@ -120,7 +123,8 @@ ls
 
 y probamos con lfi en la ruta del palacio de don pedro:
 
-![Captura de pantalla -2024-05-20 22-27-05.png](file:///home/hal/.config/joplin-desktop/resources/fc0d7c5220b2443394596dcfbd154ba2.png)
+![Captura de pantalla -2024-05-20 22-27-05](https://github.com/halexys/UciTeam1/assets/72656657/cb5e3da1-754e-42ae-91a8-99161e43b4ee)
+
 
 &nbsp;
 
@@ -136,11 +140,13 @@ y ponemos netcat en escucha:
 nc -lnvp PORT
 ```
 
-![Captura de pantalla -2024-05-20 22-32-17.png](file:///home/hal/.config/joplin-desktop/resources/b434647dabce4f39a6f5ab782f104928.png)
+![Captura de pantalla -2024-05-20 22-32-17](https://github.com/halexys/UciTeam1/assets/72656657/4a2b0472-ab3e-487c-9e7d-cbb4a87ffcb3)
 
 con la revershell navegamos por algunos directorios y encontros la 3ra flag en /home/www-data
 
-![Captura de pantalla -2024-05-20 22-36-29.png](file:///home/hal/.config/joplin-desktop/resources/665781ce9e2847f19a5498b63bc91750.png)
+![Captura de pantalla -2024-05-20 22-36-29](https://github.com/halexys/UciTeam1/assets/72656657/2c5df24c-faea-45bf-8cf6-cd45ed186728)
+
+
 
 en /etc/passwd estaba el usuario doran y la contraseña en base64
 
