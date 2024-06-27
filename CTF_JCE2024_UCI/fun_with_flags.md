@@ -2,7 +2,9 @@
 
 Primeramente descubrimos la ip de la maquina mediante un escaneo a la subred:
 
+```bash
 ·-$ nmap 10.32.2.0/24
+```
 
 Encontramos la direccion: 10.32.2.46
 
