@@ -35,6 +35,7 @@ Luego con una combinación cualquiera excepto la correcta y presionando Enter ob
 
 ![paso6](https://github.com/user-attachments/assets/dbb073b6-3e7a-4fdf-bbbe-da81e68361a6)
 
+```flag{la_b4nda_3n_can41_sur}```
 
 
 
