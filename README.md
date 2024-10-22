@@ -1,2 +1,3 @@
-# UciTeam1
+# CTF_Writeups
+
 WriteUps de competiciones de ciberseguridad
