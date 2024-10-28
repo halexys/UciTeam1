@@ -1,3 +1,5 @@
+# Boofer
+
 Observamos que el programa solo imprime una cadena de texto y luego acepta una entrada de datos:
 
 ![b1](https://github.com/user-attachments/assets/f1e7175f-fd15-4263-954c-11d46e79b2cf)
