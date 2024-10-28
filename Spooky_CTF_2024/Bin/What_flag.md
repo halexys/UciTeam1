@@ -1,3 +1,5 @@
+# What flag
+
 Tenemos un archivo que aparentemente no hace nada, lo abrimos con un debbuger como radare2 y vemos un conjunto de funciones sospechosas:
 
 ![wf](https://github.com/user-attachments/assets/8963eebc-3a99-4552-bf74-039db879c8b8)
