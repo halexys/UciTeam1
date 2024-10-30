@@ -12,7 +12,7 @@ Y abrimos con un editor de texto los archivos creados observamos que en las line
 
 `@@@@@@@}@@`
 
-Si extraemos algunas lineas mas, po ejemplo con:
+Si extraemos algunas lineas mas, por ejemplo con:
 
 `cat filechartpassword.txt | head -n 5 > c`
 
