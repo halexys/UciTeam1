@@ -6,7 +6,7 @@ Tenemos una imagen con un zip dentro nuevamente, extraemos con binwalk o zsteg e
 
 Crackeamos la contraseña con John The Ripper o hashcat y obtenemos la flag:
 
-![devil1](https://github.com/user-attachments/assets/26ad7254-ac9c-4c50-b8a4-adf95dc31826)
+![25](https://github.com/user-attachments/assets/bac159d1-8bcf-4c8b-a1b4-10aecd07ef2b)
 
 `NICC{J3rS3y_D3v1l_Arch1V3}`
 
