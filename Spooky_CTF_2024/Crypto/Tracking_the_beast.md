@@ -1,6 +1,6 @@
 # Crypto / Tracking the beast
 
-Nos dan un punto inicial (26,38), la curva eliptica  y^2 = x^3 + 73x + 42 mod 251 y el numero de comic de Linterna Verde con la portada requerida es el #49: 
+Nos dan un punto inicial (26,38), la curva eliptica  y^2 = x^3 + 73x + 42 mod 251 y nos describen la portada de un comic de Linterna Verde que resulta ser el #49: 
 
 ![lea](https://github.com/user-attachments/assets/54038285-ade1-4aa2-9e00-1af16f80cb23)
 
