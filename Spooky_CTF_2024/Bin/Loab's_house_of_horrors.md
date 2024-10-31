@@ -42,7 +42,25 @@ En la segunda entrada hay un intento de seguridad, pero igualmente se ejecutará
 
 Entonces podemos revisar todas las posibles localizaciones con: `$(cat /tmp/singularity; cat /tmp/abyss ; cat /tmp/orphans; cat /home/council; cat /tmp/.boom; cat /home/victim/.consortium;  cat /usr/bnc/.yummyarbs; cat /tmp/.loab; cat /tmp/loab)`
 
-Nos devuelve una cadena en base64: **Ck5JQ0N7SnU1dF9wdTdfbDBAYl8xbl9yYzNfb3JfaDMxMV9pX2d1M3NzfQ==**
+Nos devuelve una cadena en base64: **TklDQ3tKdTV0X3B1N19sMEBiXzFuX3JjM19vcl9oMzExX2lfZ3Uzc3N9Cg==**
+
+```
+
+    You have entered the house of horrors. You will be presented with a series of challenges.
+    If you complete them all, you will be rewarded with the flag.
+    If you fail, you will be trapped here forever.
+    Who dares enter my realm: $(cat /tmp/singularity; cat /tmp/abyss ; cat /tmp/orphans; cat /home/council; cat /tmp/.boom; cat /home/victim/.consortium;  cat /usr/bnc/.yummyarbs; cat /tmp/.loab; cat /tmp/loab)
+
+	Get comfortable. You will be here forever.
+TklDQ3tKdTV0X3B1N19sMEBiXzFuX3JjM19vcl9oMzExX2lfZ3Uzc3N9Cg==
+	
+Your mother was a hamster and your father smelt of elderberries.
+
+	Is that it? Pitiful.
+
+	TOO SLOW - GOODBYE
+
+```
 
 La decodificamos y obtenemos la flag:
 
