@@ -2,7 +2,7 @@
 
 ![image](https://github.com/user-attachments/assets/9f88cdc0-937f-4fc5-af89-74b318a9ef09)
 
-Igual que 
+Igual que en https://github.com/halexys/UciTeam1/blob/main/CTF_MetaRed_Argentina-TIC_2024/Beginner/Poke_1%3ANo_again_please.md, encontramos el identificador en la Pokedex de cada pokemon y convertimos de decimal a ASCII, solo que aqui tendremos que organizarlo un poco
 
 Exeggcute (102) Lickitung (108) fl
 
