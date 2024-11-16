@@ -1,5 +1,14 @@
 # Beginner / This will make you ANGRy
 
+
++ Library that allows to create symbolic variables: claripy
++ Argument length: 0x24 (36), dado las comparaciones de las funciones dbg.main(6 caracteres) + db.check_part1(6 caracteres) + dbg.check_part2(6 caracteres) + dbg.check_part3(18 caracteres) = 36
++ Hex value of first printable character: 0x20 (SPACE), inicio del rango de caracteres a usar
++ Hex value of last printable character: 0x7e (~), final del rango de caracteres a usar
++ Success condition: state.posix.dumps(1) (salida estandar de angr) y return b'Success!' porque es la string que usa el binario al salir todo bien
++ Fail condition state.posix.dumps(1) (salida estandar de angr) y return b'Fail!' porque es la string que usa el binario al salir algo mal
++ Evaluation of a symbolic expression: solver.eval(a,b) 
+
 Script arreglado para encontrar la bandera usando angr
 
 ``` python
@@ -55,3 +64,5 @@ if simgr.found:
 else:
     print("Could not find the solution.")
 ```
+
+`flag{Rev3rsIng_Is_e4si3r_uz1nG_angr}`
