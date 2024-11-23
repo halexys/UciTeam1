@@ -12,6 +12,11 @@ izz~GOARCH
 
 Los binarios en go estan estaticamente enlazados, lo que significa que no acceden a librerias externas, por lo que contienen todo lo necesario para funcionar por sí solos, por ende encontramos facilmente mas de 1000 funciones hasta en un simple HolaMundo.
 
+``` asm
+[0x00465760]> afl|wc -l
+1330
+```  
+
 Nos centramos en estas tres funciones:
 ``` asm
 0x00465760    8    172 sym.main.map.init.0
@@ -20,12 +25,8 @@ Nos centramos en estas tres funciones:
 ```
 
 La primera 'sym.main.map.init.0' describe la inicializacion de un objeto Map en Go. Se reservan 39 bytes:
-``` asm
 
 ``` asm
-[0x00465760]> afl|wc -l
-1330
-```  
 |      |:   0x00465779      bb27000000     mov ebx, 0x27               ; '\'' ; 39
 |      |:   0x0046577e      31c9           xor ecx, ecx                ; int64_t arg_18h
 |      |:   0x00465780      e81b75faff     call sym.runtime.makemap
