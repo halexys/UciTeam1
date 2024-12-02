@@ -132,7 +132,7 @@ Buscamos un gadget del tipo 'jmp rax'. En radare podemos hacer esto con `/R jmp 
   0x000010bf               ffe0  jmp rax
 ``` 
 
-Buscamos su desplazamiento con respeto a la direccion de main. Podemos ver la direccion de main listando las funciones con `afl` 
+Buscamos su desplazamiento con respecto a la direccion de main. Podemos ver la direccion de main listando las funciones con `afl` 
 
 ``` bash
 python3
