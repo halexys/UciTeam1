@@ -121,8 +121,6 @@ En efecto, tenemos control de RIP. Ahora tenemos que introducir un shellcode en 
 
 Buscamos un gadget del tipo 'jmp rax'. En radare podemos hacer esto con `/R jmp rax`
 
-```
-
 ``` asm 
 /R jmp rax
   0x000010b1               7415  je 0x10c8
