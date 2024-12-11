@@ -117,7 +117,7 @@ Para calcular la direccion base del ejecutable solo hay que restarle el desplaza
 
 ![slipreturn](https://github.com/user-attachments/assets/385fe987-62a0-4462-8ffd-8362b0318bfa)
 
-%<n>$p es un identificador de formato que nos permite imprimir un valor específico de la pila, donde n es el desplazamiento a a dirección actual del puntero de pila, contado a partir de 1.
+%\<n\>$p es un identificador de formato que nos permite imprimir un valor específico de la pila, donde n es el desplazamiento a a dirección actual del puntero de pila, contado a partir de 1.
 
 Entonces, podemos obtener las direcciones que nos interesan con %11$p y %13$p y calcular la direccion base del ejecutable, por ahora el script iría quedando así:
 
@@ -161,7 +161,6 @@ io.info(f"{leak_got("exit")=:x}")
 
 libc.address = puts_addr - libc.sym.puts
 ```
-### Seccion incompleta
 
 Bien, ahora necesitamos un buffer overflow para ganar una shell remota. Si dejamos la vida del stack en el juego a 13 exactamente nos lleva a una función stack_smash que acepta una entrada:
 
