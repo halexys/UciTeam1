@@ -37,13 +37,13 @@ Le pasamos este CSP a https://csp-evaluator.withgoogle.com/ para ver si hay algu
 
 ![2025-03-16-104937_822x272_scrot](https://github.com/user-attachments/assets/ca15505b-f1e0-4067-a722-32d7a74e9ab3)
 
-Podemos ver que podemos cargar cualquier base-uri, lo que nos permite cambiar la direccion base de cualquier src en la pagina a la del sitio que queramos. Con esto probamos a crear una receta nueva. Usamos un subdominio de neocities.org, que permite hospedar paginas web (aunque solo el frontend) de manera gratuitaa.
+Observamos que podemos cargar cualquier base-uri, lo que nos permite cambiar la direccion base de cualquier src en la pagina a la del sitio que queramos. Con esto probamos a crear una receta nueva. Usamos un subdominio de neocities.org, sitio que permite hospedar paginas web (aunque solo el frontend) de manera gratuita.
 
 ![2025-03-16-105846_572x502_scrot](https://github.com/user-attachments/assets/ce9039fd-af5c-4414-8bf8-c5c623aed91b)
 
 ![2025-03-16-105909_955x108_scrot](https://github.com/user-attachments/assets/c50b8793-fc49-4170-af20-9fe811a7c2d4)
 
-Podemos observar que el script /static/js/image.js ahora es llamado de nuestro sitio trampa. Perfecto ahora observemos el comportamiento del bot que revisa nuestras recetas:
+Podemos observar que el script /static/js/image.js ahora es llamado de nuestro sitio trampa. Perfecto, ahora observemos el comportamiento del bot que revisa nuestras recetas:
 
 ``` python
 def admin_bot_visit(recipe_id):
