@@ -4,6 +4,14 @@
 
 Las contraseñas son hashes MD5, usamos https://crackstation.net/ para crackearlos:
 
-![2025-03-21-180625_1366x768_scrot](https://github.com/user-attachments/assets/8e735af4-4eef-4ec8-b2e9-1a5a39c89c79)
+```
+echo -ne "mars\nsaturn94\n4neptune\n" | nc alien-encryption.ctf.ritsec.club 32190
+We found some hard drives on an alien ship that we think contains important data, but they seem to be encrypted. can you crack the passwords?
+password 1: password 2: password 3:
+password 1: correct
+password 2: correct
+password 3: correct
+flag 1: RS{a_c0smic_adv3ntur3}
+```
 
 `RS{a_c0smic_adv3ntur3}`
