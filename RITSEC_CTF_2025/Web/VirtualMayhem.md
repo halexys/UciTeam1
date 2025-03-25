@@ -1,5 +1,7 @@
 # Virtual Mayhem
 
+![2025-03-25-105204_726x348_scrot](https://github.com/user-attachments/assets/378ff069-3d03-400f-9539-849ad3fbbe94)
+
 Podemos insertar plantillas de PugJs y renderizarlas en la pagina, pero existen restricciones
 
 No se pueden usar las siguientes expresiones regulares:
