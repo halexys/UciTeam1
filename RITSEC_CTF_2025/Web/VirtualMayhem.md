@@ -51,9 +51,9 @@ Pero no funciona porque la plantilla es ejecutada en una maquina virtual, sin ac
 ```
 
 - En el contexto de la VM, this normalmente apunta al objeto sandbox proporcionado ({username: "Player"})
-- Object.getPrototypeOf(this) obtiene el prototipo del sandbox
-- sandboxPrototype.constructor obtiene el constructor del objeto (normalmente Object)
-- sandbox.Prototype.constructor.constructor obtiene el constructor del constructor (normalmente Function)
+- Object.getPrototypeOf(this) obtiene el prototipo de objeto `Object.prototype`
+- sandboxPrototype.constructor obtiene el constructor del objeto (normalmente `Object()`) porque los literales de objeto se crean con new Object()
+- sandbox.Prototype.constructor.constructor obtiene el constructor del constructor (normalmente `Function()`)
 - sandbox.Prototype.constructor.constructor('return this')() Ejecuta la funcion y devuelve this
 - `Cuando una función se llama en modo no estricto, su this apunta al objeto global`
 
