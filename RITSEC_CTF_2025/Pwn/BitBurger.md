@@ -1,5 +1,7 @@
 # Bit Burger
 
+![2025-03-25-105152_716x342_scrot](https://github.com/user-attachments/assets/bd2e464c-b5a5-4174-8500-5a83a2be5468)
+
 Revisamos las propiedades del binario:
 
 ```
