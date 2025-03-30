@@ -23,4 +23,23 @@ Entonces se debe hacer una multiplicacion escalar, el punto (26,38) por el escal
 
 Usando https://graui.de/code/elliptic2/ podemos ver los puntos del campo finito generado en una curva bajo aritmética modular. Si hacemos click en el punto que nos dan como dato en la tabla de suma de puntos podremos ver el subgrupo generado por una operación de suma de puntos con él mismo X veces, de tal manera que aplicar 49 veces esta operacion nos da como resultado el punto de la flag.
 
+Otra solucion es este script de python:
+``` python
+from ecdsa.ellipticcurve import CurveFp, Point
+name="Curve"
+p=251
+a=73
+b=42
+x=26
+y=38
+assert (y*y) % p == (x*x*x + a*x + b) % p
+curve = CurveFp(p,a,b)
+
+P = Point(curve,x,y)
+n=49
+PF = P * n
+
+print(f"P Final: ({PF.x()},{PF.y()})")
+```
+
 `NICC{(72,17)}`
