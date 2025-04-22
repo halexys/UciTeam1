@@ -26,7 +26,7 @@ jobs:
         run: |
           sed -i '/<!-- CTFTIME_RANK_START -->/,/<!-- CTFTIME_RANK_END -->/{//!d}' README.md
           sed -i '/<!-- CTFTIME_RANK_START -->/r rank.tmp' README.md
-          rm rank.tmp
+          # rm rank.tmp
 
       - name: Commit changes
         run: |
