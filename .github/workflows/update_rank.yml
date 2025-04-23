@@ -1,0 +1,32 @@
+name: Update rank
+#Runs every week
+on:
+  schedule:
+    - cron: "0 0 * * 1"   
+    #Use https://crontab.guru/ for cron schedule expression
+
+#steps to carry out 
+jobs:
+  build:
+    # Create a ubuntu virtual machine
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo content # checkout the repository content to github runner
+        uses: actions/checkout@v4
+
+      - name: setup python   #install latest version of python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - name: execute py script   # run fetch_ranking.py to update the README file
+        run: |
+          python3 fetch_ranking.py
+      - name: commit and push   
+        run: |-
+          git diff
+          git config --global user.email "kalcast00@proton.me"   
+          git config --global user.name "Calana2"
+          git add -A
+          git commit -m "Update README.md - Ranking updated" || exit 0
+          git push
