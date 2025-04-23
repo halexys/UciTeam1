@@ -6,11 +6,11 @@
 
 ### WriteUps de competiciones de ciberseguridad / CTF writeups
 
-replace1
+🇨🇺 **CTFtime Cuba Rank:** #2
 
-replace2
+👑 **Global Rank:** #780
 
-replace3
+⭐ **Rating Points:** 28.51
 
 ## 2024
 - [JNIC Sevilla 2024](https://github.com/halexys/UciTeam1/tree/main/JNIC2024)
