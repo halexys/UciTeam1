@@ -1,5 +1,6 @@
-name: Update rank
-#Runs every week
+# Name of workflow
+name: flow
+#Runs At 00:00 on the first day of every month
 on:
   schedule:
     - cron: "0 0 * * 1"   
@@ -19,14 +20,14 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: 3.x
-      - name: execute py script   # run fetch_ranking.py to update the README file
+      - name: execute py script   # run update.py to update the README file
         run: |
-          python3 fetch_ranking.py
-      - name: commit and push   
+          python3 update_rank.py
+      - name: commit and push    #IMPORTANT - replace with your email and username
         run: |-
           git diff
           git config --global user.email "kalcast00@proton.me"   
           git config --global user.name "Calana2"
           git add -A
-          git commit -m "Update README.md - Ranking updated" || exit 0
+          git commit -m "Update README.md - Add new joke" || exit 0
           git push
