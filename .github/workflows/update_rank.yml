@@ -1,11 +1,11 @@
 # Name of workflow
-name: flow
+name: Update Rank
 #Runs At 00:00 on the first day of every month
 on:
+  workflow_dispatch:
   schedule:
     - cron: "0 0 * * 1"   
     #Use https://crontab.guru/ for cron schedule expression
-
 #steps to carry out 
 jobs:
   build:
