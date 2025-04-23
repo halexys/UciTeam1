@@ -6,6 +6,12 @@
 
 ### WriteUps de competiciones de ciberseguridad / CTF writeups
 
+replace1
+
+replace2
+
+replace3
+
 ## 2024
 - [JNIC Sevilla 2024](https://github.com/halexys/UciTeam1/tree/main/JNIC2024)
 - [JCE UCI 2024](https://github.com/halexys/UciTeam1/tree/main/CTF_JCE2024_UCI)
