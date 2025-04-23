@@ -6,7 +6,13 @@
 
 ### WriteUps de competiciones de ciberseguridad / CTF writeups
 
-## 2024
+🇨🇺 **CTFtime Cuba Rank:** #2
+
+👑 **Global Rank:** #780
+
+⭐ **Rating Points:** 28.51
+
+### 2024
 - [JNIC Sevilla 2024](https://github.com/halexys/UciTeam1/tree/main/JNIC2024)
 - [JCE UCI 2024](https://github.com/halexys/UciTeam1/tree/main/CTF_JCE2024_UCI)
 - [Metared Mexico Anuies TIC 2024](https://github.com/halexys/UciTeam1/tree/main/CTF_MetaRed_Mexico%20Anuies-TIC_2024)
@@ -18,7 +24,7 @@
 - [World Wide CTF 2024](https://github.com/halexys/UciTeam1/tree/main/World_Wide_CTF_2024)
 
 
-#### 2025
+### 2025
 - [K!nd4SUS CTF 2025](https://github.com/halexys/UciTeam1/tree/main/K!nd4SUS_CTF_2025)
 - [RITSEC CTF 2025](https://github.com/halexys/UciTeam1/tree/main/RITSEC_CTF_2025)
 - [CodeVinci CTF 2025](https://github.com/halexys/UciTeam1/tree/main/CodeVinciCTF_2025)
