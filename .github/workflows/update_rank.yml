@@ -22,7 +22,7 @@ jobs:
           python-version: 3.x
       - name: execute py script   # run update.py to update the README file
         run: |
-          python3 update_rank.py
+          python3 fetch_ranking.py
       - name: commit and push    #IMPORTANT - replace with your email and username
         run: |-
           git diff
