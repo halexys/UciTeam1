@@ -3,7 +3,7 @@
 Es una shell de python donde estamos limitados a unos pocos comandos, no podemos leer `flag.txt` con el comando `cat`
 
 Al ejecutar `git commit` se crea un snapshot con id `"{tiempo actual en segundos}-{hash sha256 de un numero aleatorio entre 1 y 10000 acortado a 6 bytes}"`
-```
+```python
     def _git_commit(self, args):
         if args:
             print("Usage: git commit")

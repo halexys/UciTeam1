@@ -52,7 +52,7 @@ Afortunadamente me encontre este shellcode para `/bin/sh` en shellstorm de solo 
 
 https://shell-storm.org/shellcode/files/shellcode-909.html
 
-```
+``` python
 from pwn import *
 
 elf = context.binary = ELF("./chal")
