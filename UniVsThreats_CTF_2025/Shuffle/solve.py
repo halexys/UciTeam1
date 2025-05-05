@@ -1,7 +1,6 @@
 #!/usr/local/bin/python3
 import random
 
-#Flag encontrada con semilla 1746205233: UVT{1_l1ke_t0_m0v3_1t_m0v3_i7}
 P = [15, 6, 19, 20, 28, 11, 27, 16, 0, 14, 22, 25, 4, 17, 30, 9, 1, 7, 23, 13, 31, 26, 2, 8, 18, 12, 29, 5, 21, 10, 3, 24]
 
 # Construir permutación inversa
