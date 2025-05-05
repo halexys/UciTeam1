@@ -76,6 +76,17 @@ Descomprimimos `secretdata.zip` con la contraseña y nos devuelve una foto:
 ![hacker](https://github.com/user-attachments/assets/194dd1ff-2405-4090-89fb-e508243b5c72)
 
 La flag fue ocultada en la imagen usando LSB en el byte azul:
+```
+zsteg --lsb hacker.png
+imagedata           .. text: "8;:59:$%%"
+b1,b,lsb,xy         .. text: "UVT{4_l0T_0f_lay3r5_70_unc0v3r_1nn1t?}"
+b1,bgr,lsb,xy       .. text: "[lm'cR5kv7+QKd"
+b2,rgb,lsb,xy       .. file: OpenPGP Public Key
+b2,bgr,lsb,xy       .. file: OpenPGP Public Key
+b4,r,lsb,xy         .. text: "\"$5D33C44DDDDDC33D3D3D3D3D3EDDDCDDDDTETUDDEUUUeU3U3U3U3UUUDDDDEE3U3U3U33\"U3U3U2#253CB334DDDDDDDDDEh"
+b4,g,lsb,xy         .. text: "UWhwffvggwwwwwvf"
+b4,b,lsb,xy         .. text: "uE2\"3DUEU\"2##UUDSDEETU4ETwvFw"
+```
 
-UVT{4_l0  T_0f_lay  3r5_70_u  nc0v3r_1  nn1t?}
+`UVT{4_l0T_0f_lay3r5_70_unc0v3r_1nn1t?}`
 
