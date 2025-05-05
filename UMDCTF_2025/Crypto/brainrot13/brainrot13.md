@@ -63,6 +63,7 @@ flag = int(f.small_roots()[0])
 print(long_to_bytes(flag))
 ```
 
+`UMDCTF{shouldverotatedtwice}`
 
 
 
