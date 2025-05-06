@@ -32,4 +32,4 @@
 - [TexSaw CTF 2025](https://github.com/halexys/UciTeam1/tree/main/TexSAW_CTF_2025)
 - [B01lers CTF 2025](https://github.com/halexys/UciTeam1/tree/main/B01lersCTF_2025)
 - [UMD CTF 2025](https://github.com/halexys/UciTeam1/tree/main/UMDCTF_2025)
-
+- [UniVsThreats_CTF_2025](https://github.com/halexys/UciTeam1/tree/main/UniVsThreats_CTF_2025)
