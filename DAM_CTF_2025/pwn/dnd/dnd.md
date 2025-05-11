@@ -1,5 +1,7 @@
 # dnd
 
+`patchelf --set-interpreter ./ld-linux-x86-64.so.2 --replace-needed libc.so.6 ./libc.so.6 dnd`
+
 ```
 checksec --file=dnd
 [*] '/home/kalcast/Descargas/Pwn/dnd/dnd'
