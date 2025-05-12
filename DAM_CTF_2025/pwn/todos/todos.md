@@ -163,6 +163,10 @@ Probé el programa en x86 y x86_64 con el mismo Makefile y funcionaba bien, no m
 
 Supongo que se debe a la bandera de optimizacion. Debe haber algun conflicto con la bandera `fsigned char` que no se da cuenta y "optimiza" el programa ignorando `i<0` porque ve que el argumento es un char y este es positivo siempre.
 
+**ACTUALIZACION**: Explicacion del autor
+![2025-05-11-204205_769x267_scrot](https://github.com/user-attachments/assets/0dbc2de9-860c-4c26-9498-8b1bd6ac86a3)
+
+
 ## Lectura arbitraria
 
 Como sabemos `flag` y el struct de structs `todos` son variables globales, que debido a que el binario no tiene PIE entonces tienen una direccion de memoria fija:
