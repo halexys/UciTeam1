@@ -8,9 +8,9 @@
 
 🇨🇺 **CTFtime Cuba Rank:** #1
 
-👑 **Global Rank:** #593
+👑 **Global Rank:** #409
 
-⭐ **Rating Points:** 42.54
+⭐ **Rating Points:** 62.87
 
 ### 2024
 - [JNIC Sevilla 2024](https://github.com/halexys/UciTeam1/tree/main/JNIC2024)
@@ -33,3 +33,4 @@
 - [B01lers CTF 2025](https://github.com/halexys/UciTeam1/tree/main/B01lersCTF_2025)
 - [UMD CTF 2025](https://github.com/halexys/UciTeam1/tree/main/UMDCTF_2025)
 - [UniVsThreats_CTF_2025](https://github.com/halexys/UciTeam1/tree/main/UniVsThreats_CTF_2025)
+- [DAM_CTF_2025](https://github.com/halexys/UciTeam1/tree/main/DAM_CTF_2025)
