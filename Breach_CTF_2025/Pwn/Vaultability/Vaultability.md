@@ -109,9 +109,9 @@ nm main| grep secret
 
 - Creamos nuestra carga util, con dos direcciones de relleno y una tercera apuntando a nuestra funcion secretAccess, luego la direccion que obtuvimos de `View Security Log` para reemplazar la referencia:
 
-`carga_util =  + 16 bytes de cualquier cosa + 0x00000000004011f6 + direccion_de_Vault_PIN_en_el_Stack`
+`carga_util =  16 bytes de cualquier cosa + 0x00000000004011f6 + direccion_de_Vault_PIN_en_el_Stack`
 
-- Por ultimo llamamos a BackupVault_triggerAllarm, que intentara acceder a direccion_de_Vault_PIN_en_el_Stack + 16 bytes, direccion que contiene 0x00000000004011f6, por lo que se ejecutará la funcion maliciosa
+- Por ultimo llamamos a BackupVault_triggerAlarm, que intentara acceder a direccion_de_Vault_PIN_en_el_Stack + 16 bytes, direccion que contiene 0x00000000004011f6, por lo que se ejecutará la funcion maliciosa
 
 ## Exploit
 ```python
