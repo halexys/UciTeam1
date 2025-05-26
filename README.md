@@ -8,9 +8,9 @@
 
 🇨🇺 **CTFtime Cuba Rank:** #1
 
-👑 **Global Rank:** #409
+👑 **Global Rank:** #399
 
-⭐ **Rating Points:** 62.87
+⭐ **Rating Points:** 66.10
 
 ### 2024
 - [JNIC Sevilla 2024](https://github.com/halexys/UciTeam1/tree/main/JNIC2024)
